@@ -1,0 +1,26 @@
+.el-table__expanded-cell {
+  padding: 10px 20px;
+
+  .el-form-item {
+    margin: 0;
+  }
+}
+
+.main-table {
+  button {
+    padding: 0 5px;
+    margin: 0 5px 0 0 !important;
+  }
+
+  button:last-child {
+    margin-right: 0 !important;
+  }
+}
+
+.main-table-center {
+  @extend .main-table;
+
+  th,td {
+    text-align: center !important;
+  }
+}

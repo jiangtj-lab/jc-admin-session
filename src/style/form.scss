@@ -1,0 +1,27 @@
+.dialog-el-transfer {
+  .el-transfer__buttons {
+    padding: 0 10px;
+  }
+
+  .el-button {
+    padding: 10px;
+  }
+
+  .el-transfer-panel {
+    width: 180px;
+  }
+}
+
+.main-transfer-mini {
+  .el-transfer-panel {
+    width: 180px;
+  }
+
+  .el-transfer__buttons {
+    padding: 0 10px;
+
+    button {
+      padding: 5px;
+    }
+  }
+}
