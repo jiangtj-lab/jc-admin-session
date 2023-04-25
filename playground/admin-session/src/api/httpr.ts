@@ -1,8 +1,33 @@
 import { Client } from '@jiangtj/jc-http'
-import { ElMessage } from 'element-plus';
+import { ElMessage, ElLoading } from 'element-plus';
 import router from '~/route/router';
 
+const cache = new Map();
+
 export default class CustomClient extends Client {
+
+  loading(requestId: string): void {
+    let msg = ElLoading.service({
+      lock: true,
+      text: '加载中……',
+      background: 'rgba(0, 0, 0, 0.7)'
+    })
+    console.log("start")
+    console.log(requestId)
+    console.log(msg)
+    cache.set(requestId, msg);
+  }
+
+  cancelLoading(requestId: string): void {
+    let msg = cache.get(requestId);
+    console.log("end")
+    console.log(requestId)
+    console.log(msg)
+    if (msg) {
+      msg.close();
+      cache.delete(requestId);
+    }
+  }
 
   handleClientError(status: number, data: any): void {
     if (status === 401) {

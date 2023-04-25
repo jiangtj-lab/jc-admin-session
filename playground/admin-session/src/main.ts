@@ -16,6 +16,7 @@ import myComponent from './mycomponents';
 
 import CustomClient from './api/httpr';
 import systemView from './views/system';
+import axios from 'axios';
 
 log.setLevel(import.meta.env.VITE_LOG_LEVEL);
 
@@ -32,5 +33,8 @@ apis.getLoginInfo().then(resp => {
   admin.value = resp
 });
 
-systemView.register(new CustomClient());
+systemView.register(new CustomClient(axios.create({
+  baseURL: import.meta.env.VITE_BASE_API,
+  timeout: 500000 // 请求超时时间
+})));
 

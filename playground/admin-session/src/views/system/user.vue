@@ -8,6 +8,7 @@ export default defineMenu({
 </script>
 
 <template>
+<dev>
   <query-form>
     <el-form-item label="名称">
       <el-input v-model="selectModel.username" placeholder="名称" />
@@ -61,12 +62,13 @@ export default defineMenu({
       </span>
     </template>
   </el-dialog>
+</dev>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
 import { ElMessage, ElMessageBox } from 'element-plus';
-import apis from '~/api/apis';
+import apis from './apis';
 import { applySortSelect, idDesc } from '../../utils/sort';
 import ButtonCreate from '~/mycomponents/button/button-create.vue';
 import ButtonQuery from '~/mycomponents/button/button-query.vue';

@@ -5,6 +5,7 @@ import lodash from 'lodash';
 
 export class Client {
   inst: AxiosInstance;
+  timeoutCache: Map<string, NodeJS.Timeout>;
 
   constructor(inst?: AxiosInstance) {
     this.inst = inst || axios.create({
@@ -12,6 +13,7 @@ export class Client {
         'Content-Type': 'application/json'
       }
     });
+    this.timeoutCache = new Map();
   }
 
   // 加载中
@@ -24,17 +26,26 @@ export class Client {
 
   }
 
-  startLoading(requestId: string, method: string) {
-    let timeout: (NodeJS.Timeout | null);
-
+  private startLoading(requestId: string, method: string) {
     if (method === 'get') {
-      timeout = setTimeout(() => {
+      let x = setTimeout(() => {
         this.loading(requestId);
-        timeout = null;
+        this.timeoutCache.delete(requestId)
       }, 1000);
+      this.timeoutCache.set(requestId, x);
     } else {
       this.loading(requestId);
     }
+  }
+
+  private endLoading(requestId: string) {
+    let x = this.timeoutCache.get(requestId);
+    if (x) {
+      clearTimeout(x);
+      this.timeoutCache.delete(requestId);
+      return;
+    }
+    this.cancelLoading(requestId);
   }
 
   request<T = any>(method: string, url: string, config = {}, skipCheck = false): Promise<T> {
@@ -52,7 +63,7 @@ export class Client {
         return Promise.reject(error);
       })
       .finally(() => {
-        this.cancelLoading(requestId);
+        this.endLoading(requestId);
       });
   }
 
