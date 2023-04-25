@@ -12,22 +12,22 @@ const apis = {
 
   // admin user
   getAdminUserPage(data: any) {
-    return get('/system/admin/user/page', data);
+    return get('/system/user/page', data);
   },
   getAdminUser(data: any) {
-    return get('/system/admin/user', data);
+    return get('/system/user', data);
   },
   createAdminUser(data: any) {
-    return post('/system/admin/user', data);
+    return post('/system/user', data);
   },
   updateAdminUser(data: any) {
-    return put('/system/admin/user', data);
+    return put('/system/user', data);
   },
   deleteAdminUser(id: any) {
-    return del('/system/admin/user', { id });
+    return del('/system/user', { id });
   },
   updateAdminUserPassword(data: any) {
-    return post('/system/admin/user/password', data);
+    return post('/system/user/password', data);
   }
 
 };
