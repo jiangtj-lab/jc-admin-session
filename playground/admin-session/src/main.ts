@@ -14,6 +14,9 @@ import locale from 'element-plus/lib/locale/lang/zh-cn';
 // import { registerSW } from 'virtual:pwa-register';
 import myComponent from './mycomponents';
 
+import CustomClient from './api/httpr';
+import systemView from './views/system';
+
 log.setLevel(import.meta.env.VITE_LOG_LEVEL);
 
 const app = createApp(App);
@@ -29,4 +32,5 @@ apis.getLoginInfo().then(resp => {
   admin.value = resp
 });
 
+systemView.register(new CustomClient());
 

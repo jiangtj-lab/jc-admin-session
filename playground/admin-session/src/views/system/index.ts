@@ -2,6 +2,8 @@
 import user from './user.vue';
 import { Setting } from '@element-plus/icons-vue';
 import { markRaw } from 'vue';
+import { Client } from '@jiangtj/jc-http';
+import { client } from './apis';
 
 export default {
   meta: {
@@ -9,5 +11,8 @@ export default {
     index: 'system',
     icon: markRaw(Setting)
   },
-  items: [user]
+  items: [user],
+  register: (newClient: Client) => {
+    client.setClient(newClient);
+  }
 };

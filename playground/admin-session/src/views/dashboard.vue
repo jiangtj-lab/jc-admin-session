@@ -36,5 +36,5 @@ export default defineMenu({
 </template>
 
 <script setup lang="ts">
-import HelloWorld from '@/mycomponents/HelloWorld.vue';
+import HelloWorld from '~/mycomponents/HelloWorld.vue';
 </script>

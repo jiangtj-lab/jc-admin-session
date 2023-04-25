@@ -1,5 +1,5 @@
 <script>
-import { defineMenu } from '@/utils/views';
+import { defineMenu } from '~/utils/views';
 export default defineMenu({
   name: '账号管理',
   index: 'system-user',
@@ -66,11 +66,11 @@ export default defineMenu({
 <script setup>
 import { ref, reactive } from 'vue';
 import { ElMessage, ElMessageBox } from 'element-plus';
-import apis from '@/api/apis';
+import apis from '~/api/apis';
 import { applySortSelect, idDesc } from '../../utils/sort';
-import ButtonCreate from '@/mycomponents/button/button-create.vue';
-import ButtonQuery from '@/mycomponents/button/button-query.vue';
-import ButtonGroupTable from '@/mycomponents/button/button-group-table.vue';
+import ButtonCreate from '~/mycomponents/button/button-create.vue';
+import ButtonQuery from '~/mycomponents/button/button-query.vue';
+import ButtonGroupTable from '~/mycomponents/button/button-group-table.vue';
 
 const selectModel = reactive({});
 const selectSort = ref(null);
