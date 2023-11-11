@@ -10,7 +10,7 @@ import ElementPlus from 'element-plus';
 import apis from './api/apis';
 import { admin } from '~/api/store';
 import 'dayjs/locale/zh-cn';
-import locale from 'element-plus/lib/locale/lang/zh-cn';
+import locale from 'element-plus/es/locale/lang/zh-cn';
 // import { registerSW } from 'virtual:pwa-register';
 import myComponent from './mycomponents';
 
