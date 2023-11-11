@@ -9,12 +9,12 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    ButtonCreate: typeof import('./components/button/button-create.vue')['default']
-    ButtonDelete: typeof import('./components/button/button-delete.vue')['default']
-    ButtonEdit: typeof import('./components/button/button-edit.vue')['default']
-    ButtonGroupTable: typeof import('./components/button/button-group-table.vue')['default']
-    ButtonQuery: typeof import('./components/button/button-query.vue')['default']
-    ButtonQueryDropdown: typeof import('./components/button/button-query-dropdown.vue')['default']
+    ButtonCreate: typeof import('./src/components/button/button-create.vue')['default']
+    ButtonDelete: typeof import('./src/components/button/button-delete.vue')['default']
+    ButtonEdit: typeof import('./src/components/button/button-edit.vue')['default']
+    ButtonGroupTable: typeof import('./src/components/button/button-group-table.vue')['default']
+    ButtonQuery: typeof import('./src/components/button/button-query.vue')['default']
+    ButtonQueryDropdown: typeof import('./src/components/button/button-query-dropdown.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElButtonGroup: typeof import('element-plus/es')['ElButtonGroup']
@@ -34,7 +34,7 @@ declare module '@vue/runtime-core' {
     ElMain: typeof import('element-plus/es')['ElMain']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
-    ElMenuItemRoute: typeof import('./components/el-menu-item-route.vue')['default']
+    ElMenuItemRoute: typeof import('./src/components/el-menu-item-route.vue')['default']
     ElPagination: typeof import('element-plus/es')['ElPagination']
     ElRow: typeof import('element-plus/es')['ElRow']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
@@ -47,10 +47,10 @@ declare module '@vue/runtime-core' {
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
-    QueryForm: typeof import('./components/query/query-form.vue')['default']
+    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    QueryForm: typeof import('./src/components/query/query-form.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
-    RouterTabs: typeof import('./components/router-tabs.vue')['default']
+    RouterTabs: typeof import('./src/components/router-tabs.vue')['default']
     RouterView: typeof import('vue-router')['RouterView']
   }
 }

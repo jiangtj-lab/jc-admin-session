@@ -7,7 +7,7 @@
     "name": "Mr.J",
     "email": "jiang.taojie@foxmail.com"
   },
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "up-latest": "pnpm up --latest"
   },

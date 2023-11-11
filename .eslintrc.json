@@ -1,0 +1,48 @@
+{
+  "root": true,
+  "env": {
+    "es2021": true
+  },
+  "extends": [
+    "plugin:vue/vue3-strongly-recommended",
+    "prettier"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "espree",
+    "ecmaFeatures" : {
+      // 非 react 项目关闭 jsx 语法校验,默认为 true 
+      "jsx" : true
+    }
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "warn", {
+        "printWidth": 120,
+        "endOfLine": "auto",
+        "singleQuote": true,
+        "bracketSameLine": true
+      }
+    ],
+    "vue/script-indent": ["error", 2, {
+      "switchCase": 1
+    }],
+    "vue/max-attributes-per-line": "off",
+    "vue/singleline-html-element-content-newline": "off",
+    "vue/require-default-prop": "off",
+    "vue/html-closing-bracket-newline": "off",
+    "vue/multi-word-component-names": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "linebreak-style": "off",
+    "no-unused-vars": "warn",
+    "no-debugger": "off",
+    "no-mixed-operators": "off"
+  },
+  "globals": {
+    "defineEmits": "readonly",
+    "defineProps": "readonly",
+    "defineExpose": "readonly"
+  }
+}
